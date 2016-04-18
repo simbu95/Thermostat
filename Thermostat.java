@@ -122,7 +122,7 @@ public void drawMenu(Graphics g){
     g.drawRect(width*2, 0, width, height);
     g.drawRect(width*3, 0, width, height);
     Font currentFont = g.getFont();
-    Font newFont = currentFont.deriveFont(currentFont.getSize() * 1.8F);
+    Font newFont = currentFont.deriveFont(currentFont.getSize() * 1.8F * getWidth()/800.0F);
     g.setFont(newFont);
     g.drawString("Page Zero", width/4, height*11/20);
     g.drawString("Page One", width+width/4, height*11/20);
@@ -138,7 +138,7 @@ public void ProcessMenu(int x){
 
 }
 public void ProcessZero(int x1, int y1){
-    if(x1>getWidth()/4 && x1<getWidth()*3/4){page=1;}
+    if(x1>getWidth()/4 && x1<getWidth()*3/4){page=4;}
 }
 public void PageZero(Graphics g){
     g.setColor(Color.black);
@@ -165,7 +165,12 @@ public void PageThree(Graphics g){
     g.setColor(Color.white);
     g.fillRect(getWidth()/4, getHeight()/4+getHeight()*3/16, getWidth()/2, getHeight()*3/8);
 }
-public void PageFour(Graphics g){}
- 
+public void PageFour(Graphics g){
+    g.setColor(Color.white);
+    g.fillRect(0, 0, getWidth(), getHeight());
+    g.setColor(Color.green);
+    g.fillOval(0, getHeight()/4, getWidth(), getHeight()*3/4);
+}
+    
 }
 
